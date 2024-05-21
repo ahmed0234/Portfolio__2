@@ -189,6 +189,47 @@ document.addEventListener('DOMContentLoaded' , function() {
 
 
 
+// ===============================================================================NAV ================
+
+
+  const hamburger = document.querySelector('#humbargur');
+  const nav = document.getElementById('nav');
+  const closeBtn = document.getElementById('close-btn');
+
+  hamburger.addEventListener('click', function() {
+      gsap.to(nav, {
+          duration: 0.5,
+          x: '-100%',
+          ease: 'power2.out'
+      });
+      console.log(`clicked`);
+  });
+
+  closeBtn.addEventListener('click', function() {
+      gsap.to(nav, {
+          duration: 0.5,
+          x: '100%',
+          ease: 'power2.in'
+      });
+  });
+
+
+
+  document.querySelectorAll('.mobile__nav__links').forEach((link, idx)=>{
+    link.addEventListener('click', ()=>{
+      gsap.to(nav, {
+        duration: 0.5,
+        x: '100%',
+        ease: 'power2.in'
+    });
+    })
+  })
+
+
+
+
+
+
 
 
 
